@@ -53,7 +53,7 @@ const Footer = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
                                 <a
-                                    href="https://share.google/bsc3I88YBc5Pm5N6e"
+                                    href="https://maps.app.goo.gl/eJVS4qx5ujWV6qjKA"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="group-hover:text-foreground transition-colors hover:underline"

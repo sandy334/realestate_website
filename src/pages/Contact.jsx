@@ -136,7 +136,7 @@ const Contact = () => {
                         {/* Direct Link Button */}
                         <div className="flex justify-center mb-6">
                             <a
-                                href="https://share.google/bsc3I88YBc5Pm5N6e"
+                                href="https://maps.app.goo.gl/eJVS4qx5ujWV6qjKA"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
@@ -152,7 +152,7 @@ const Contact = () => {
                         <div className="rounded-xl overflow-hidden shadow-lg relative group h-[450px] bg-gray-100 dark:bg-gray-800">
                             {/* Clickable Overlay */}
                             <a
-                                href="https://share.google/bsc3I88YBc5Pm5N6e"
+                                href="https://maps.app.goo.gl/eJVS4qx5ujWV6qjKA"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="absolute inset-0 z-10 flex items-center justify-center bg-black/0 group-hover:bg-black/10 transition-colors"
