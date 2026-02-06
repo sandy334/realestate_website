@@ -38,7 +38,7 @@ const Home = () => {
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
                             </span>
-                            <span className="text-sm font-medium">Trusted by 500+ Happy Customers</span>
+                            <span className="text-sm font-medium">Trusted by 5000+ Happy Customers</span>
                         </div>
 
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
