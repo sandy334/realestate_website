@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import PropertyCard from '../components/PropertyCard';
 import initialProperties from '../data/properties.json';
 
@@ -18,6 +18,48 @@ const Home = () => {
     const featuredProperties = properties
         .filter(p => p.status === 'Available')
         .slice(0, 3);
+
+    const scrollRef = useRef(null);
+    const isPausedRef = useRef(false);
+    const requestRef = useRef(null);
+
+    // Property types data moved here to be used in multiple places
+    const propertyTypes = [
+        { icon: '🏞️', title: 'Plots', desc: 'DTCP Approved', color: 'from-[#0F4C3A] to-[#2D8B6E]', type: 'Plot' },
+        { icon: '🏡', title: 'Houses', desc: 'Independent Villas', color: 'from-[#2D8B6E] to-[#0F4C3A]', type: 'House' },
+        { icon: '🏢', title: 'Flats', desc: 'Premium Apartments', color: 'from-[#C9A14A] to-[#D4AF37]', type: 'Flat' },
+        { icon: '🏬', title: 'Commercial', desc: 'Business Spaces', color: 'from-[#D4AF37] to-[#C9A14A]', type: 'Commercial' },
+        { icon: '🌾', title: 'Agriculture', desc: 'Farm Lands', color: 'from-[#2D8B6E] to-[#0F4C3A]', type: 'Agriculture' }
+    ];
+
+    // Double the items for seamless loop
+    const displayPropertyTypes = [...propertyTypes, ...propertyTypes];
+
+    useEffect(() => {
+        const animate = () => {
+            if (!isPausedRef.current && scrollRef.current) {
+                const scrollContainer = scrollRef.current;
+
+                // Slow continuous scroll (0.5px per frame)
+                scrollContainer.scrollLeft += 0.5;
+
+                // Reset logic for seamless loop
+                // We check if we've scrolled past half the content
+                if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+                    scrollContainer.scrollLeft = 0;
+                }
+            }
+            requestRef.current = requestAnimationFrame(animate);
+        };
+
+        requestRef.current = requestAnimationFrame(animate);
+
+        return () => {
+            if (requestRef.current) {
+                cancelAnimationFrame(requestRef.current);
+            }
+        };
+    }, []);
 
     return (
         <div className="min-h-screen">
@@ -68,13 +110,7 @@ const Home = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Desktop Grid - Hidden on Mobile */}
                     <div className="hidden md:grid md:grid-cols-5 gap-4 md:gap-6">
-                        {[
-                            { icon: '🏞️', title: 'Plots', desc: 'DTCP Approved', color: 'from-[#0F4C3A] to-[#2D8B6E]', type: 'Plot' },
-                            { icon: '🏡', title: 'Houses', desc: 'Independent Villas', color: 'from-[#2D8B6E] to-[#0F4C3A]', type: 'House' },
-                            { icon: '🏢', title: 'Flats', desc: 'Premium Apartments', color: 'from-[#C9A14A] to-[#D4AF37]', type: 'Flat' },
-                            { icon: '🏬', title: 'Commercial', desc: 'Business Spaces', color: 'from-[#D4AF37] to-[#C9A14A]', type: 'Commercial' },
-                            { icon: '🌾', title: 'Agriculture', desc: 'Farm Lands', color: 'from-[#2D8B6E] to-[#0F4C3A]', type: 'Agriculture' }
-                        ].map((item, index) => (
+                        {propertyTypes.map((item, index) => (
                             <Link to={`/properties?type=${item.type}`} key={index} className="card group cursor-pointer block">
                                 <div className="p-6 text-center">
                                     <div className={`bg-gradient-to-br ${item.color} w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
@@ -88,16 +124,18 @@ const Home = () => {
                     </div>
 
                     {/* Mobile Swipeable Carousel */}
-                    <div className="md:hidden overflow-x-auto scrollbar-hide snap-x snap-mandatory">
-                        <div className="flex gap-4 pb-4">
-                            {[
-                                { icon: '🏞️', title: 'Plots', desc: 'DTCP Approved', color: 'from-[#0F4C3A] to-[#2D8B6E]', type: 'Plot' },
-                                { icon: '🏡', title: 'Houses', desc: 'Independent Villas', color: 'from-[#2D8B6E] to-[#0F4C3A]', type: 'House' },
-                                { icon: '🏢', title: 'Flats', desc: 'Premium Apartments', color: 'from-[#C9A14A] to-[#D4AF37]', type: 'Flat' },
-                                { icon: '🏬', title: 'Commercial', desc: 'Business Spaces', color: 'from-[#D4AF37] to-[#C9A14A]', type: 'Commercial' },
-                                { icon: '🌾', title: 'Agriculture', desc: 'Farm Lands', color: 'from-[#2D8B6E] to-[#0F4C3A]', type: 'Agriculture' }
-                            ].map((item, index) => (
-                                <Link to={`/properties?type=${item.type}`} key={index} className="card group cursor-pointer flex-shrink-0 w-[calc(50%-8px)] snap-start block">
+                    {/* Mobile Swipeable Carousel */}
+                    <div
+                        ref={scrollRef}
+                        className="md:hidden overflow-x-auto scrollbar-hide"
+                        onMouseEnter={() => isPausedRef.current = true}
+                        onMouseLeave={() => isPausedRef.current = false}
+                        onTouchStart={() => isPausedRef.current = true}
+                        onTouchEnd={() => setTimeout(() => isPausedRef.current = false, 3000)}
+                    >
+                        <div className="flex gap-4 pb-4 w-max">
+                            {displayPropertyTypes.map((item, index) => (
+                                <Link to={`/properties?type=${item.type}`} key={index} className="card group cursor-pointer flex-shrink-0 w-[80vw] sm:w-[50vw] block">
                                     <div className="p-6 text-center">
                                         <div className={`bg-gradient-to-br ${item.color} w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                                             {item.icon}
