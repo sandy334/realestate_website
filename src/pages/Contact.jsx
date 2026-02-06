@@ -31,8 +31,8 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h3 className="font-bold text-gray-800 dark:text-foreground mb-1">Phone</h3>
-                                        <a href="tel:+918073490284" className="text-primary dark:text-primary hover:text-primary-700 dark:hover:text-primary/80 transition-colors">
-                                            +91 80734 90284
+                                        <a href="tel:+919980034694" className="text-primary dark:text-primary hover:text-primary-700 dark:hover:text-primary/80 transition-colors">
+                                            +91 99800 34694
                                         </a>
                                     </div>
                                 </div>
@@ -94,7 +94,7 @@ const Contact = () => {
                             {/* Quick Action Buttons - Centered */}
                             <div className="flex gap-4 justify-center flex-wrap">
                                 <a
-                                    href="tel:+918073490284"
+                                    href="tel:+919980034694"
                                     className="bg-gradient-to-r from-[#C9A14A] to-[#D4AF37] hover:from-[#B89140] hover:to-[#C9A14A] text-white p-6 rounded-2xl transition-all duration-300 shadow-2xl hover:shadow-3xl hover:scale-110 flex items-center justify-center"
                                     aria-label="Call us"
                                 >
