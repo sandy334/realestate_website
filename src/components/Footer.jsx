@@ -64,17 +64,17 @@ const Footer = () => {
                             </li>
 
                             <li className="flex items-center space-x-3">
-                                <svg className="w-20 h-6 flex-shrink-0" viewBox="0 0 140 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <text x="0" y="30" fontFamily="Arial, sans-serif" fontWeight="bold" fontSize="32" fill="#0076B9">Just</text>
-                                    <text x="66" y="30" fontFamily="Arial, sans-serif" fontWeight="bold" fontSize="32" fill="#FF7F00">dial</text>
-                                </svg>
                                 <a
                                     href="https://www.justdial.com/Mysore/Sri-Sidhaganga-Real-Estate-Akkamahadevi-Road-Jp-Nagar-Vidyaranyapuram/0821PX821-X821-230109160812-A4Z6_BZDET"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-muted-foreground hover:text-primary transition-colors"
+                                    className="hover:opacity-80 transition-opacity"
+                                    aria-label="Visit our JustDial Profile"
                                 >
-                                    JustDial Profile
+                                    <svg className="w-24 h-8" viewBox="0 0 140 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <text x="0" y="30" fontFamily="Arial, sans-serif" fontWeight="bold" fontSize="32" fill="#0076B9">Just</text>
+                                        <text x="66" y="30" fontFamily="Arial, sans-serif" fontWeight="bold" fontSize="32" fill="#FF7F00">dial</text>
+                                    </svg>
                                 </a>
                             </li>
                         </ul>

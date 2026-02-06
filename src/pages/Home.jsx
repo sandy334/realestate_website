@@ -135,7 +135,7 @@ const Home = () => {
                     >
                         <div className="flex gap-4 pb-4 w-max">
                             {displayPropertyTypes.map((item, index) => (
-                                <Link to={`/properties?type=${item.type}`} key={index} className="card group cursor-pointer flex-shrink-0 w-[80vw] sm:w-[50vw] block">
+                                <Link to={`/properties?type=${item.type}`} key={index} className="card group cursor-pointer flex-shrink-0 w-[45vw] sm:w-[50vw] block">
                                     <div className="p-6 text-center">
                                         <div className={`bg-gradient-to-br ${item.color} w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                                             {item.icon}
