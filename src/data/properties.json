@@ -1,0 +1,102 @@
+[
+    {
+        "id": "1",
+        "title": "Spacious 3BHK Villa in Vijayanagar",
+        "type": "House",
+        "subtype": "Sell",
+        "price": "₹85,00,000",
+        "location": "Vijayanagar, Mysuru",
+        "area": "1800 sq.ft",
+        "description": "Beautiful 3BHK independent villa with modern amenities, parking space, and garden. Located in prime residential area.",
+        "images": [
+            "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800",
+            "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800"
+        ],
+        "status": "Available"
+    },
+    {
+        "id": "2",
+        "title": "Premium Plot in Hebbal",
+        "type": "Plot",
+        "subtype": "Residential",
+        "price": "₹45,00,000",
+        "location": "Hebbal, Mysuru",
+        "area": "2400 sq.ft",
+        "description": "DTCP approved residential plot in developing area. Clear title, ready for construction. Near schools and hospitals.",
+        "images": [
+            "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800"
+        ],
+        "status": "Available"
+    },
+    {
+        "id": "3",
+        "title": "Luxury 2BHK Flat in Gokulam",
+        "type": "Flat",
+        "subtype": "Rent",
+        "price": "₹25,000/mo",
+        "location": "Gokulam, Mysuru",
+        "area": "1200 sq.ft",
+        "description": "Modern 2BHK apartment with lift, covered parking, 24/7 security, and power backup. Premium gated community.",
+        "images": [
+            "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800",
+            "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800"
+        ],
+        "status": "Available"
+    },
+    {
+        "id": "4",
+        "title": "Commercial Space in Saraswathipuram",
+        "type": "Commercial",
+        "subtype": "Lease",
+        "price": "₹1,50,000/mo",
+        "location": "Saraswathipuram, Mysuru",
+        "area": "3000 sq.ft",
+        "description": "Prime commercial property on main road. Ideal for showroom, office, or retail business. High footfall area.",
+        "images": [
+            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800"
+        ],
+        "status": "Available"
+    },
+    {
+        "id": "5",
+        "title": "4BHK Duplex House in Kuvempunagar",
+        "type": "House",
+        "subtype": "Sell",
+        "price": "₹1,10,00,000",
+        "location": "Kuvempunagar, Mysuru",
+        "area": "2500 sq.ft",
+        "description": "Spacious duplex house with 4 bedrooms, modular kitchen, terrace, and parking. Well-maintained property.",
+        "images": [
+            "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800"
+        ],
+        "status": "Sold"
+    },
+    {
+        "id": "6",
+        "title": "Industrial Plot Near Ring Road",
+        "type": "Plot",
+        "subtype": "Industrial",
+        "price": "₹60,00,000",
+        "location": "Ring Road, Mysuru",
+        "area": "4000 sq.ft",
+        "description": "Industrial converted plot suitable for small scale industries or warehousing. Excellent connectivity.",
+        "images": [
+            "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800"
+        ],
+        "status": "Available"
+    },
+    {
+        "id": "7",
+        "title": "Fertile Farmland in Hunsur Road",
+        "type": "Agriculture",
+        "subtype": "Sell",
+        "price": "₹1,50,00,000",
+        "location": "Hunsur Road, Mysuru",
+        "area": "2 Acres",
+        "description": "Productive agricultural land with coconut plantation and farmhouse. Good water source and road access.",
+        "images": [
+            "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800"
+        ],
+        "status": "Available"
+    }
+]
